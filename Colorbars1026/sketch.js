@@ -9,9 +9,7 @@ function setup() {
   numBars = 40;
   loadBars(numBars);
   bubbleSort(Bars);
-
 }
-
 function draw(){
   background(20, 20, 20, 600);
   noStroke();
@@ -36,6 +34,13 @@ function loadars(numBars){
 function bubbleSort(Bars){
   var lenghth = Bars.length;
   for (var i = 0; i < length; i++){
-    for (var j = 0; j < (length-i-1))
+    for (var j = 0; j < (length-i-1); j++)
+    var a = Bars[j].clrAvg;
+    var b = Bars[j+1].clrAvg;
+    if (a > b){
+      var temp = Bars[j];
+      Bars[j] = Bars[j+1];
+      Bars[j+1] = temp;
+    }
   }
 }

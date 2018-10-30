@@ -5,35 +5,24 @@
 */
 //global variables
 var bars = [];
-function bars(location, length, width, color){
+function Colorbar(location, length, width, color, clrAvg){
   // Instance variables
   this.loc = location;
   this.l = length;
   this.w = width;
-  this.col = color;
-}
-
+  this.clr = color;
+  this.clrAvg = clrAvg;
 
   // This function calls other functions
   this.run = function(){
-    this.checkEdges();
-    this.update();
     this.render();
   }
-  //this function changes the location of the Ball
-  //by adding speed x and y
-  this.update = function(){
 
-      }
-
-
-  //checkEdges()
-
-  }
   // render() draws the ball at the new location
   this.render = function(){
-    fill(0, 0, 255)
+    fill(this.clr);
+    rect(this.loc.x, this.loc.y, this.w, this.h);
 
   }
 
-}//  End of Bars Constructor
+}//  End of colorBars Constructor
