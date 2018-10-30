@@ -4,7 +4,8 @@
 **  Oct 29, 2018
 */
 //global variables
-var bars = [];
+var colorBars = [];
+
 function Colorbar(location, length, width, color, clrAvg){
   // Instance variables
   this.loc = location;
@@ -18,7 +19,7 @@ function Colorbar(location, length, width, color, clrAvg){
     this.render();
   }
 
-  // render() draws the ball at the new location
+  // render() draws the bars
   this.render = function(){
     fill(this.clr);
     rect(this.loc.x, this.loc.y, this.w, this.h);
