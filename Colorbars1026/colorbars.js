@@ -13,6 +13,7 @@ function bars(location, length, width, color){
   this.col = color;
 }
 
+
   // This function calls other functions
   this.run = function(){
     this.checkEdges();
