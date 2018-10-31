@@ -4,15 +4,15 @@
 **  Oct 29, 2018
 */
 //global variables
-var colorBars = [];
+var Bars = [];
 
-function Colorbar(location, length, width, color, clrAvg){
+function Colorbar(location, width, height, color){
   // Instance variables
   this.loc = location;
-  this.l = length;
   this.w = width;
+  this.h = height;
   this.clr = color;
-  this.clrAvg = clrAvg;
+  //this.clrAvg = clrAvg;
 
   // This function calls other functions
   this.run = function(){

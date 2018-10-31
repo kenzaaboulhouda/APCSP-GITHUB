@@ -15,7 +15,7 @@ function draw(){
   background(20, 20, 20, 6000);
   noStroke();
   for (var i = 0; i < Bars.length; i++ ){
-    Bars[i].run();
+    Bars[i].render();
   }
 }
 //
@@ -27,16 +27,16 @@ function loadBars(numBars){
     var red = random(0, 255);
     var green = random(0,255);
     var blue = random(0,255);
-    var clr = color(red, green, blue);
-    var clrAvg = (red + green +blue)/3;
-     Bars = new colorBar(loc, l, w, clr, clrAvg);
+    //var clr = color(red, green, blue);
+    //var clrAvg = (red + green +blue)/3;
+     Bars = new colorbars(loc, w, h, color(red,green,blue));
     Bars.push(bar);
   }
 }
 // employs bubblesort algorithm
 function bubbleSort(Bars){
   var length = Bars.length;
-  for (var i = 0; i < length; i++){
+  for (var i = 0; i < length; i--){
     for (var j = 0; j < (length-i-1); j++){
     var a = Bars[j].clrAvg;
     var b = Bars[j+1].clrAvg;
