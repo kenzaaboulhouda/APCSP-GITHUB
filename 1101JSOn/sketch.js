@@ -11,4 +11,3 @@ function setup() {
   noCanvas();
   console.log(data.description)
 }
-test
