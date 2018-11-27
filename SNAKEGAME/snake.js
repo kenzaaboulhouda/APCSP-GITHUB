@@ -1,28 +1,71 @@
 /*
-** SNAKE Constructor Function
+** snake Constructor Function
 **  Kenza Aboulhouda
 **  October 4, 2018
 */
 
 //function creates the snake
-function Snake(loc, vel){
+function Snake(loc, vel, status){
   // Instance variables
-  this.loc = loc;
-  this.vel = vel;
+this.loc = loc;
+this.vel = vel;
+this.status = status;
+
 
   this.run = function(){
-    this.update();
-    this.render();
+    this.update;
+    this.render;
+}
+    this.update = function(){
+     this.loc.add(this.vel);
+     this.loc.x = constrain(this.loc.x, 0, width-w);
 
-  }
-  this.update = function(){
-    this.loc.add(this.vel);
-    this.loc.x = constrain(this.loc.x, 0, width-w)
+      this.loc.y = constrain(this.loc.y, 0, width-w)
+    }
 
-  }
-  this.render = function(){
-    fill(0,255,0);
-    rect(this.loc.x, this.loc.y, w, w)
-  }
+
+    this.render = function(){
+    fill(255,255,255);
+      rect(this.loc.x, this.loc.y, w, w)
+    }
+    //end of snake constructor
+    }
+
+//this.dir = function(x, y){
+//  if (x !=0 && this.xspeed != x*(-1))
+//  || y != 0 && this.yspeed != y*(-1)){
+  //  this.xspeed = x;
+    //this.yspeed = y;
+//  }
+//}
+//this.eat = function(food){
+//  if (this.x === food.x() && this.y === food.y()){
+  //  food.eaten();
+  //  this.points++;
+  //  this.tail.push(createVector(this.x, this.y));
+//  }
+//}
+//this.move = function(){
+//  if (this.tail.length > 0){
+  //  var tipOfTail = this.tail.pop();
+  //  tipOfTail.x = this.x;
+    ///tipOfTail.y = this.y;
+//  }
+//  this.x %= width;
+//  this.y %= height;
+//  if (this.x < 0)
+//}
+
+
+//  this.update = function(){
+  //  this.loc.add(this.vel);
+//this.loc.x = constrain(this.loc.x, 0, width-variables[0]);
+  //    this.loc.x = constrain(this.loc.y, 0, height-variables[0]);
+
+
+//  }
+  //this.render = function(){
+    //fill(0,255,0);
+    //rect(this.loc.x, this.loc.y, variables[0],variables[0])
+  //}
   //end of snake constructor
-  }
