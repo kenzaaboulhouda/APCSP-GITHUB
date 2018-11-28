@@ -5,30 +5,28 @@
 */
 
 //function creates the snake
-function Snake(loc, vel, status){
+function Snake(loc, vel){
   // Instance variables
 this.loc = loc;
 this.vel = vel;
-this.status = status;
 
 
   this.run = function(){
     this.update;
     this.render;
 }
-    this.update = function(){
-     this.loc.add(this.vel);
-     this.loc.x = constrain(this.loc.x, 0, width-w);
+this.update = function(){
+  this.loc.add(this.vel);
+  this.loc.x = constrain(this.loc.x, 0, width-w);
+  this.loc.y = constrain(this.loc.y, 0, height-w)
+}
 
-      this.loc.y = constrain(this.loc.y, 0, width-w)
-    }
 
-
-    this.render = function(){
-    fill(255,255,255);
-      rect(this.loc.x, this.loc.y, w, w)
-    }
-    //end of snake constructor
+this.render = function(){
+  fill(0,255,0);
+  rect(this.loc.x, this.loc.y, w, w)
+}
+//end of snake constructor
     }
 
 //this.dir = function(x, y){
