@@ -31,10 +31,7 @@ this.render = function(){
   //snake segments
   for(var i = 0; i < this.segments.length; i++){
     rect(this.segments[i].x, this.segments[i].y, w, w)
-    
-
   }
-
   fill(0,255,0);
   rect(this.loc.x, this.loc.y, w, w)
 }
