@@ -12,8 +12,8 @@ this.vel = vel;
 
 
   this.run = function(){
-    this.update;
-    this.render;
+    this.update();
+    this.render();
 }
 this.update = function(){
   this.loc.add(this.vel);
