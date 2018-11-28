@@ -16,9 +16,9 @@ function setup(){
  cols = width/w;
  rows = height/w;
   cnv.position((windowWidth-width)/2, 30);
-  frameRate(10)
+  frameRate(5)
   background(20, 20, 20);
-  snake = new Snake(createVector(width/2, height/2), createVector(1,0));
+  snake = new Snake(createVector(width/2, height/2), createVector(0,0));
   food = new Food();
 }
 foodPosition();

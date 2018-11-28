@@ -12,7 +12,7 @@ function Food(xLocation, yLocation){
   }
   this.render = function(xLocation, yLocation){
     fill(255,0,0);
-    rect(xLocation, yLocation, w, w);//newlocation
+    rect(xLocation, yLocation, w, w); //new location
   }
 }
 
