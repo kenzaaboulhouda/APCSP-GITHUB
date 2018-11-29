@@ -16,15 +16,15 @@ function setup(){
  cols = width/w;
  rows = height/w;
   cnv.position((windowWidth-width)/2, 30);
-  frameRate(5)
-  background(20, 20, 20);
+  frameRate(10);
+  background(242, 203, 222);
   snake = new Snake(createVector(width/2, height/2), createVector(0,0));
   food = new Food();
 }
 foodPosition();
 //load snake
 function draw(){
-  background(5, 5, 5);
+  background(242, 203, 222);
   snake.run();
   food.render(locX, locY);
   if(snake.loc.x == locX && snake.loc.y == locY){
