@@ -24,7 +24,7 @@ function setup(){
 foodPosition();
 //load snake
 function draw(){
-  background(242, 203, 222);
+  background(237, 233, 189);
   snake.run();
   food.render(locX, locY);
   if(snake.loc.x == locX && snake.loc.y == locY){
