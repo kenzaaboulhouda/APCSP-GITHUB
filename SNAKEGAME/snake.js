@@ -20,12 +20,12 @@ this.update = function(){
   //snake head
   this.segments[0].x = this.loc.x;
   this.segments[0].y = this.loc.y;
-
+//snake segments
   this.loc.add(this.vel);
   this.loc.x = constrain(this.loc.x, 0, width-w);
   this.loc.y = constrain(this.loc.y, 0, height-w)
 
-  //snake segments
+
 for(var i = this.segments.length-1; i>0; i--){
     this.segments[i].x = this.segments[i-1].x;
     this.segments[i].y = this.segments[i-1].y;
@@ -43,6 +43,7 @@ this.render = function(){
     //this.segments.push(createVector(this.segments[i].x, this.segments[i].y));
 
   }
+  //snake shape
   rect(this.loc.x, this.loc.y, w, w)
 }
 //end of snake constructor

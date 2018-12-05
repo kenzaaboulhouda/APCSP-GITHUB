@@ -10,6 +10,7 @@ var food;
 var cols, rows;
 var locX;
 var locY;
+var score = 0;
 //setup canvas
 function setup(){
   var cnv = createCanvas(800, 800);
@@ -25,12 +26,24 @@ foodPosition();
 //load snake
 function draw(){
   background(237, 233, 189);
+  //score
+  text("your score" + score, 380, 50);
+  Score();
   snake.run();
   food.render(locX, locY);
-  if(snake.loc.x == locX && snake.loc.y == locY){
+  //new food position
+  if(snake.loc.x === locX && snake.loc.y === locY){
     foodPosition();
+    snake.segments.push(createVector(0,0));
   }
 }
+//Score
+function Score(){
+  if (score > 3)
+  fill(255,0,5);
+  text("DON'T LOSE", 380, 40);
+}
+
 //changing the foods position
 function foodPosition(){
   var randomX = Math.random() * 800;
@@ -38,7 +51,7 @@ function foodPosition(){
   var randomY = Math.random() * 800;
   locY = randomY - (randomY%20);
 }
-
+//key directions
 function keyPressed(){
   text(keyCode)
   //up arrow
@@ -58,13 +71,3 @@ function keyPressed(){
     snake.vel = createVector(20, 0);
   }
 }
-//function cols(){
-//  return floor(height/scl);
-//}
-//function rows(){
-  //return floor(height/scl);
-//}
-
-//function randomVector(){
-  //return createVector(floor(random(cols()))), floor(random(rows()));
-//}
