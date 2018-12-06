@@ -26,7 +26,7 @@ function setup(){
 foodPosition();
 //load snake
 function draw(){
-  background(random(255,0), random(255,0), random(255,0));
+  background(173, 200, 234);
   //score
   text("your score: " + score, 380, 50);
   Score();
@@ -36,6 +36,7 @@ function draw(){
   if(snake.loc.x === locX && snake.loc.y === locY){
     foodPosition();
     snake.segments.push(createVector(0,0));
+    score = score+10;
   }
   //deadGame();
   //gameStart();
