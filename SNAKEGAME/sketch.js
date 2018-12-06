@@ -11,6 +11,7 @@ var cols, rows;
 var locX;
 var locY;
 var score = 0;
+//var start = "true"
 //setup canvas
 function setup(){
   var cnv = createCanvas(800, 800);
@@ -25,9 +26,9 @@ function setup(){
 foodPosition();
 //load snake
 function draw(){
-  background(237, 233, 189);
+  background(random(255,0), random(255,0), random(255,0));
   //score
-  text("your score" + score, 380, 50);
+  text("your score: " + score, 380, 50);
   Score();
   snake.run();
   food.render(locX, locY);
@@ -36,6 +37,8 @@ function draw(){
     foodPosition();
     snake.segments.push(createVector(0,0));
   }
+  //deadGame();
+  //gameStart();
 }
 //Score
 function Score(){
@@ -71,3 +74,20 @@ function keyPressed(){
     snake.vel = createVector(20, 0);
   }
 }
+//function deadGame(){
+  //if statement outlining when snake is "dead"
+  //if(snake.status == "true"){
+  //  snake = 0;
+    //gameStart();
+  //}
+//}
+//
+//function gameStart(){
+//  if(start == "true"){
+//    textFont();
+//    fill(255,255,255);
+    //rect(250, 250, 350, 200);
+//    fill(0,0,0);
+    //text("Snake Game", 400, 300);
+  //}
+//}
