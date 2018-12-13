@@ -12,25 +12,26 @@ var locX;
 var locY;
 var score = 0;
 var start = "true";
-//var start = "true"
 //setup canvas
 function setup(){
   var cnv = createCanvas(800, 800);
- cols = width/w;
- rows = height/w;
+  cols = width/w;
+  rows = height/w;
   cnv.position((windowWidth-width)/2, 30);
-textAlign(CENTER, CENTER);
+  //align start and end screen text in center of template
+  textAlign(CENTER, CENTER);
+  //rate at which snake moves per/sec
   frameRate(10);
   background(242, 203, 222);
+  //build snake
   snake = new Snake(createVector(width/2, height/2), createVector(0,0));
+  //build food
   food = new Food();
 }
 foodPosition();
-//load snake
 function draw(){
+  //background color
   background(173, 200, 234);
-  //state of game
-
   //score
   text("your score: " + score, 380, 50);
   Score();
@@ -40,17 +41,21 @@ function draw(){
   if(snake.loc.x === locX && snake.loc.y === locY){
     foodPosition();
     snake.segments.push(createVector(0,0));
+    //food eaten --> score increases by 10
     score = score+10;
   }
+  //when snake dies
   deadGame();
+  //start of game
   gameStart();
 }
+//define function loadSnake
 function loadSnake(){
   var loc = createVector(200,200);
   var vel = createVector(0,0);
   snake = new Snake(loc,vel);
-
 }
+//end screen when snake dies
 function deadGame(){
   if(snake.status == "true"){
     snake = 0
@@ -62,6 +67,7 @@ function deadGame(){
     gameStart();
   }
 }
+//start screen for beginning of game
 function gameStart(){
   if(start == "true"){
     textFont()
@@ -70,19 +76,21 @@ function gameStart(){
     textSize(100);
     text("Let's eat", 400, 300)
     textSize(25);
+    //instruction to begin game
     text("Press up arrow to start", 400, 550)
     fill(207,130,255);
+  }
 }
-}
-//deadGame();
+//represent score on screen
 function Score(){
   if (score > 3)
   fill(244, 66, 66);
+  //motivational statement
   text("DON'T LOSE", 380, 30);
   textSize(20);
 }
 
-//changing the foods position
+//changing the foods position every time food is eaten
 function foodPosition(){
   var randomX = Math.random() * 800;
   locX = randomX - (randomX%20);
@@ -94,6 +102,7 @@ function keyPressed(){
   text(keyCode)
   //up arrow
   if(keyCode === UP_ARROW){
+    //to start game with up arrow
     start = "false"
     snake.vel = createVector(0, -20);
   }
@@ -110,21 +119,3 @@ function keyPressed(){
     snake.vel = createVector(20, 0);
   }
 }
-//function deadGame(){
-//if statement outlining when snake is "dead"
-//if(snake.status == "true"){
-//  snake = 0;
-
-//gameStart();
-//}
-//}
-//
-//function gameStart(){
-//  if(start == "true"){
-//    textFont();
-//    fill(255,255,255);
-//rect(250, 250, 350, 200);
-//    fill(0,0,0);
-//text("Snake Game", 400, 300);
-//}
-//}
