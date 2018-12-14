@@ -40,6 +40,7 @@ function draw(){
   //new food position
   if(snake.loc.x === locX && snake.loc.y === locY){
     foodPosition();
+    // adding snake segments
     snake.segments.push(createVector(0,0));
     //food eaten --> score increases by 10
     score = score+10;
