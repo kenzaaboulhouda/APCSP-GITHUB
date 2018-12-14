@@ -62,7 +62,7 @@ function deadGame(){
     score = 0;
     //game over text
     textSize(25);
-    text("You're not too good at this", 400, 400);
+    text("You're not too good at this, press any key to restart", 400, 400);
     loadSnake();
     gameStart();
   }
