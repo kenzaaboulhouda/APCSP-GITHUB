@@ -72,10 +72,10 @@ function deadGame(){
 function gameStart(){
   if(start == "true"){
     textFont()
-    fill(0, 0, 0);
+    fill(18, 132, 119);
     textAlign(CENTER);
     textSize(100);
-    text("Let's eat", 400, 300)
+    text("LET'S EAT", 400, 300)
     textSize(25);
     //instruction to begin game
     text("Press up arrow to start", 400, 550)

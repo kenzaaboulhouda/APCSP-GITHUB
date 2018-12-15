@@ -7,12 +7,15 @@
 //function creates the snake
 function Snake(loc, vel){
   // Instance variables
+  //location
   this.loc = loc;
+  //velocity
   this.vel = vel;
   this.segments = [];
+  //pushing in new segments
   this.segments.push(createVector(0,0));
   this.status = "false"
-  //defining functions to run
+  //defining functions
   this.run = function(){
     this.update();
     this.render();
@@ -52,7 +55,9 @@ function Snake(loc, vel){
       var distY = this.loc.y - this.segments[i].y;
       if((distX == 0) && (distY == 0)){
         this.status = "true";
+        //testing for snake status
         console.log(this.status);
+        //function for when snake dies
         deadGame();
       }
     }
