@@ -19,6 +19,11 @@ function Snake(loc, vel){
     this.tangled();
   }
   this.update = function(){
+    //segment foreloop
+    for(var i = this.segments.length - 1; i > 0; i--){
+      this.segments[i].x = this.segments[i-1].x;
+      this.segments[i].y = this.segments[i-1].y;
+    }
     //snake head
     this.segments[0].x = this.loc.x;
     this.segments[0].y = this.loc.y;
@@ -26,11 +31,7 @@ function Snake(loc, vel){
     this.loc.add(this.vel);
     this.loc.x = constrain(this.loc.x, 0, width-w);
     this.loc.y = constrain(this.loc.y, 0, height-w)
-    //segment foreloop
-    for(var i = this.segments.length - 1; i > 0; i--){
-      this.segments[i].x = this.segments[i-1].x;
-      this.segments[i].y = this.segments[i-1].y;
-    }
+
   }
   //render function
   this.render = function(){
